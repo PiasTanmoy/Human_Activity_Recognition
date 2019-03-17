@@ -22,7 +22,7 @@ from sklearn.utils.multiclass import unique_labels
 from sklearn.utils import shuffle
 
 N_EPOCH = 20
-BATCH_SIZE = 10
+BATCH_SIZE = 5
 VERBOSE = 1
 N_CLASS = 10
 OPTIMIZER = SGD()
@@ -71,6 +71,8 @@ classifier = Sequential()
 classifier.add(Dense(units = 6, activation='relu', kernel_initializer='glorot_uniform', input_dim=INPUT_DIM))
 classifier.add(Dropout(DROPOUT))
 classifier.add(Dense(units = 20, activation='relu', kernel_initializer = 'glorot_uniform'))
+classifier.add(Dropout(DROPOUT))
+classifier.add(Dense(units = 30, activation='relu', kernel_initializer = 'glorot_uniform'))
 classifier.add(Dropout(DROPOUT))
 classifier.add(Dense(units = 30, activation='relu', kernel_initializer = 'glorot_uniform'))
 classifier.add(Dropout(DROPOUT))
